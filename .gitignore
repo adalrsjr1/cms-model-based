@@ -76,6 +76,9 @@ local.properties
 .settings/
 .loadpath
 
+cms.*/
+cms/
+
 # Eclipse Core
 .project
 

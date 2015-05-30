@@ -2,7 +2,7 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/cms/src" modelPluginID="cms" modelName="Cms" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    language="" operationReflection="true" importOrganizing="true">
   <foreignModel>cms.ecore</foreignModel>
   <genPackages prefix="Cms" disposableProviderFactory="true" ecorePackage="cms.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="cms.ecore#//MENU_TYPE">
@@ -14,7 +14,8 @@
       <genEnumLiterals ecoreEnumLiteral="cms.ecore#//MENU_TYPE/VERTICAL_CENTER"/>
     </genEnums>
     <genClasses ecoreClass="cms.ecore#//Home">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Home/pages"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          ecoreFeature="ecore:EReference cms.ecore#//Home/pages"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Home/menus"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Home/footers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Home/headers"/>
@@ -35,12 +36,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cms.ecore#//Footer/id"/>
     </genClasses>
     <genClasses ecoreClass="cms.ecore#//Content">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Content/innerContent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cms.ecore#//Content/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Content/innerContent"/>
     </genClasses>
     <genClasses ecoreClass="cms.ecore#//Menu">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cms.ecore#//Menu/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Menu/entries"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cms.ecore#//Menu/id"/>
     </genClasses>
     <genClasses ecoreClass="cms.ecore#//Propety">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cms.ecore#//Propety/key"/>
@@ -66,5 +68,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cms.ecore#//IText/content"/>
     </genClasses>
     <genClasses ecoreClass="cms.ecore#//Text"/>
+    <genClasses ecoreClass="cms.ecore#//InnerContent"/>
   </genPackages>
 </genmodel:GenModel>

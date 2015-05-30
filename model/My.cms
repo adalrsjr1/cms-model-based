@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cms:Home xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cms="http://cin.ufpe.br/cms">
+  <pages menu="//@menus.0" footer="//@footers.0" header="//@headers.0" id="home_page">
+    <content id="ct_home_page">
+      <innerContent xsi:type="cms:ContentText">
+        <Paragraphs xsi:type="cms:Paragraph" content="&quot;teste 1234&quot;"/>
+      </innerContent>
+      <innerContent xsi:type="cms:ContentList"/>
+      <innerContent xsi:type="cms:ContentEnumeration"/>
+    </content>
+  </pages>
+  <pages id="asdfasd"/>
+  <menus id="menuuu"/>
+  <footers id="footer"/>
+  <footers id="footer1"/>
+  <headers id="header"/>
+</cms:Home>
