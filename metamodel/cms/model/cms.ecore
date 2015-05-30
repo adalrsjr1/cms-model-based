@@ -17,21 +17,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//Header"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//Content"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
         iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Header">
     <eStructuralFeatures xsi:type="ecore:EReference" name="headerContent" upperBound="-1"
         eType="#//Content" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Footer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="footerContent" upperBound="-1"
         eType="#//Content" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Content">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="innerContent" upperBound="-1"
         eType="#//InnerContent" containment="true"/>
   </eClassifiers>
@@ -39,7 +39,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//MENU_TYPE"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
         eType="#//Entry" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MENU_TYPE">
     <eLiterals name="HORIZONTAL_TOP"/>
@@ -50,31 +50,34 @@
     <eLiterals name="VERTICAL_CENTER"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Propety">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entry" eSuperTypes="#//Propety">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ContentTable" eSuperTypes="#//InnerContent">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tableRows" upperBound="-1"
-        eType="#//TableRow" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Grid" eSuperTypes="#//InnerContent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rows" lowerBound="1" upperBound="-1"
+        eType="#//Row" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ContentText" eSuperTypes="#//InnerContent">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Paragraphs" upperBound="-1"
-        eType="#//IText" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Row">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cols" upperBound="-1" eType="#//Col"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="grids" upperBound="-1"
+        eType="#//Grid" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//Text" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ContentList" eSuperTypes="#//InnerContent"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ContentEnumeration" eSuperTypes="#//InnerContent"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TableRow">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rowCols" upperBound="-1"
-        eType="#//TableCol" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Col">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Propety" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//Text" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TableCol"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Paragraph" eSuperTypes="#//IText"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IText">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InnerContent" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="InnerContent" upperBound="-1"
+        eType="#//InnerContent" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//IText"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InnerContent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//InnerContent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
 </ecore:EPackage>

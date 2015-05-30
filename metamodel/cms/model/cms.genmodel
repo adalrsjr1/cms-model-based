@@ -51,23 +51,24 @@
     <genClasses ecoreClass="cms.ecore#//Entry">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cms.ecore#//Entry/id"/>
     </genClasses>
-    <genClasses ecoreClass="cms.ecore#//ContentTable">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//ContentTable/tableRows"/>
+    <genClasses ecoreClass="cms.ecore#//Grid">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Grid/rows"/>
     </genClasses>
-    <genClasses ecoreClass="cms.ecore#//ContentText">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//ContentText/Paragraphs"/>
+    <genClasses ecoreClass="cms.ecore#//Row">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Row/cols"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Row/grids"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Row/text"/>
     </genClasses>
-    <genClasses ecoreClass="cms.ecore#//ContentList"/>
-    <genClasses ecoreClass="cms.ecore#//ContentEnumeration"/>
-    <genClasses ecoreClass="cms.ecore#//TableRow">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//TableRow/rowCols"/>
+    <genClasses ecoreClass="cms.ecore#//Col">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cms.ecore#//Col/size"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Col/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//Col/text"/>
     </genClasses>
-    <genClasses ecoreClass="cms.ecore#//TableCol"/>
-    <genClasses ecoreClass="cms.ecore#//Paragraph"/>
-    <genClasses ecoreClass="cms.ecore#//IText">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cms.ecore#//IText/content"/>
+    <genClasses ecoreClass="cms.ecore#//InnerContent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cms.ecore#//InnerContent/InnerContent"/>
     </genClasses>
-    <genClasses ecoreClass="cms.ecore#//Text"/>
-    <genClasses ecoreClass="cms.ecore#//InnerContent"/>
+    <genClasses ecoreClass="cms.ecore#//Text">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cms.ecore#//Text/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

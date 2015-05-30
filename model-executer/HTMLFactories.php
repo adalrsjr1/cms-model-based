@@ -7,11 +7,6 @@
  */
 
 class HTMLFactories {
-    public static function Paragraph($paragraph) {
-        return "
-            <p>
-                $paragraph->content
-            </p>
-        ";
-    }
+    // grid factory
+    
 }
